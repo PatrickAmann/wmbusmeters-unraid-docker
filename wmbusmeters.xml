@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>wmbusmeters</Name>
+  <Repository>wmbusmeters/wmbusmeters:latest</Repository>
+  <Registry>https://hub.docker.com/r/wmbusmeters/wmbusmeters</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>true</Privileged>
+  <Support>https://github.com/wmbusmeters</Support>
+  <Project>https://github.com/wmbusmeters</Project>
+  <Overview>Wmbusmeters decodes mbus and wireless mbus telegrams.</Overview>
+  <Category>HomeAutomation:</Category>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/PatrickAmann/wmbusmeters-unraid-docker/main/wmbusmeters.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/PatrickAmann/wmbusmeters-unraid-docker/main/wmbusmeters.png</Icon>
+  <ExtraParams>--restart=unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1711831706</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="wmbusmeters Data directory" Target="/wmbusmeters_data" Default="/mnt/user/appdata/wmbusmeters/data" Mode="rw" Description="Bind mount /mnt/user/appdata/wmbusmeters/data (or any other directory) into the container for persistent storage that will contain configuration and log files." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/wmbusmeters/data</Config>
+  <Config Name="Localtime File" Target="/etc/localtime" Default="/etc/localtime" Mode="ro" Description="Ensure the container has the correct local time." Type="Path" Display="advanced" Required="false" Mask="false">/etc/localtime</Config>
+  <Config Name="dev Directory for USB dongle access" Target="/dev/" Default="/dev/" Mode="ro" Description="This will work for both wmbus and RTLSDR dongles." Type="Path" Display="advanced" Required="false" Mask="false">/dev/</Config>
+</Container>
